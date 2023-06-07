@@ -5,7 +5,7 @@ class bidangDatar {
 private:
 	int x; //variabel untuk menyimpan input dari lingkaran maupun bujursangkar
 public:
-	bidangDatar(string pbidangDatar) { //constructor
+	bidangDatar() { //constructor
 		x = 0;
 	}
 	virtual void input() {
@@ -29,7 +29,7 @@ class Lingkaran :public bidangDatar { /*lengkapi disini*/
 public:
 	int x;
 	Lingkaran(string pBidangdatar) :
-		bidangDatar(pBidangdatar)
+		bidangDatar()
 	{
 		cout << "Lingkaran dibuat dengan jari-jari :" << x << "\n" << endl;
 	}
@@ -50,7 +50,7 @@ class Bujursangkar :public bidangDatar { /*lengkapi disini*/
 public:
 	int x;
 	Bujursangkar(string pBidangdatar) :
-		bidangDatar(pBidangdatar)
+		bidangDatar()
 	{
 		cout << "Bujur sangkar dibuat" << endl;
 	}
@@ -71,6 +71,9 @@ public:
 
 int main() { /*lengkapi disini*/
 	bidangDatar* bidang;
+	bidang = new Lingkaran();
+	bidang = new Bujursangkar();
+
 	Lingkaran L;
 	Bujursangkar Bs;
 
@@ -84,4 +87,5 @@ int main() { /*lengkapi disini*/
 	Bs.bidangDatar::Luas();
 	Bs.Bujursangkar::Keliling();
 
+	return 0;
 }
